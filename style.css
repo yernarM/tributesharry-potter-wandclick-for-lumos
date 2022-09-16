@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Over+the+Rainbow');
+
+.box {
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 5%;
+  width: 600px;
+  height: 600px;
+  background: #9ddadb;
+  z-index: 50;
+}
+
+.wand {
+  height: 500px;
+  width: 20px;
+  background-color: #5e303d;
+  border-radius: 10%;
+  transform: rotate(-40deg) translateX(200px) translateY(280px);
+}
+
+.handle {
+  content: '';
+  height: 150px;
+  width: 30px;
+  background-color: #5e303d;
+  border-radius: 10% 10% 20% 20%;
+  transform: translateY(360px) translateX(-5px);
+}
+
+.notches {
+  content: '';
+  height: 20px;
+  width: 35px;
+  background-color: #5e303d;
+  border-radius: 50%;
+  transform: translateY(195px) translateX(-7.5px);
+  box-shadow: 0 -15px 0 #5e303d;
+}
+
+.glow {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #e8f7f7;
+  box-shadow: 0 0 10px 10px #e8f7f7;
+  transform: translateX(178px) translateY(-360px);
+  z-index: -1;
+}
+
+.wand--animate {
+  animation: tip 5s ease-in-out;
+  
+}
+
+.glow--animate {
+  animation: tip-grow 5s ease-in-out;
+}
+
+.text {
+  font-family: 'Over the Rainbow', cursive;
+  color: #545454;
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  font-size: 3rem;
+  opacity: 0;
+}
+
+.text--animate {
+  animation: fade-in 5s ease-in-out;
+}
+
+.soundbutton {
+	position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+	cursor: pointer;
+	width: px;
+	transition: .25s ease;
+}
+
+.soundbutton.paused {
+	opacity: .25;
+}
+
+@keyframes tip {
+    0% { transform: rotate(-40deg) translateX(200px) translateY(280px) }
+    50% { transform: rotate(-60deg) translateX(100px) translateY(300px) }
+    100% { transform: rotate(-40deg) translateX(200px) translateY(280px) }
+}
+
+@keyframes tip-grow {
+    0% { transform: translateX(178px) translateY(-360px) }
+    50% { transform: translateX(100px) translateY(-320px) scale(6) }
+    100% { transform: translateX(178px) translateY(-360px) }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
